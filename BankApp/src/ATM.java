@@ -3,38 +3,22 @@ import java.util.Scanner;
 public class ATM {
 
 	public static void main(String[] args) {
+		Bank bnk = new Bank();
 		
-		addNewUser();
+		User use = new User("Sifiso", "Hadebe", "082528", bnk.createUID());
+		User use2 = new User("John", "Doe", "084856", bnk.createUID());
+		
+		System.out.print("First Name: " +use.fName
+    			+"\nLast Name: " +use.lName 
+    			+"\nNumber: " +use.phoneNumber 
+    			+"\nUserID: " +use.uid +"\n");
+		System.out.println("***********");
+		System.out.print("First Name: " +use2.fName
+    			+"\nLast Name: " +use2.lName 
+    			+"\nNumber: " +use2.phoneNumber 
+    			+"\nUserID: " +use2.uid);
 		
 	}
-	
-    public static void addNewUser() {
-    	String fname, lname, phone, userID;
-		
-		Scanner input = new Scanner(System.in);
-		Bank bnk = new Bank();
-		User addU;
-		
-		System.out.println("***** Save New User *****");
-		System.out.print("Enter you First Name: ");
-		fname = input.nextLine();
-		System.out.print("Enter you Last Name: ");
-		lname = input.nextLine();
-		System.out.print("Enter you phone number: ");
-		phone = input.nextLine();
-		userID = bnk.createUID();
-		
-		addU = new User(fname, lname, phone, userID);
-		
-		System.out.println("***** New User Added *****");
-		
-		System.out.print("First Name: " +addU.fName 
-				+"\nLast Name: " +addU.lName 
-				+"\nNumber: " +addU.phoneNumber 
-				+"\nUserID: " +addU.uid);
-
-    }
-	
 	
 
 }
