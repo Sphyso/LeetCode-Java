@@ -33,9 +33,25 @@ public class Bank {
 		return stUserID;
 	}
 	
-	public String createAccUID() {
+	public String createAccNum() {
 		
-		return "";
+		Random random = new Random();
+        int accNum = 100000 + random.nextInt(900000);
+        
+        String stAccNum = Integer.toString(accNum);
+        
+		for (int x = 0; x < userIDTracker.size(); x++) {
+			if(userIDTracker.get(x) != stAccNum) {
+				return stAccNum;
+			} else{
+				accNum = 100000 + random.nextInt(900000);
+				stAccNum = Integer.toString(accNum);
+		        
+			}
+			
+		}
+		
+		return stAccNum;
 	}
 
 }
