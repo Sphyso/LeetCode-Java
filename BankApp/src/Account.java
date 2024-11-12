@@ -26,6 +26,14 @@ public class Account {
     public void setValue(String value) {
     	accountType[index] = value;
     }
+    
+    public double getBalance() {
+    	return balance;
+    }
+    
+    public void updateBalance(double amount) {
+        this.balance += amount;
+    }
 	
 
 }

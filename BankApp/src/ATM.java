@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,16 +14,26 @@ public class ATM {
 		//Add account for user
 		Account account = new Account(bnk.createAccNum(), 1, 0.00, use);
 		Account account2 = new Account(bnk.createAccNum(), 0, 0.00, use2);
+		//Add transaction
+		LocalDateTime dateTime = LocalDateTime.now();
+		DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		String formattedDate = dateTime.format(formatDate);
 		
-		System.out.println("Account houlder: " +use.fName +" " +use.lName
+		//Transation trans1 = new Transation(bnk.createTransactionID(), 0, )
+		
+		
+		
+		
+		/*Print Account
+		System.out.println("Account holder: " +use.fName +" " +use.lName
 				+"\nAccount Number: " +account.accountNumber
 				+"\nAccount Type: " + account.getValue()
 				+"\nBalance: " +account.balance +"\n");
 		System.out.println("***********");
-		System.out.println("Account houlder: " +use2.fName +" " +use2.lName
+		System.out.println("Account holder: " +use2.fName +" " +use2.lName
 				+"\nAccount Number: " +account2.accountNumber
 				+"\nAccount Type: " + account2.getValue()
-				+"\nBalance: " +account2.balance +"\n");
+				+"\nBalance: " +account2.balance +"\n");*/
 		
 		
 		/*Printing User
