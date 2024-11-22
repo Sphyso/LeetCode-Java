@@ -12,8 +12,8 @@ public class ATM {
 		User use = new User("Sifiso", "Hadebe", "082528", bnk.createUID());
 		User use2 = new User("John", "Doe", "084856", bnk.createUID());
 		//Add account for user
-		Account account = new Account(bnk.createAccNum(), 1, 0.00, use);
-		Account account2 = new Account(bnk.createAccNum(), 0, 0.00, use2);
+		Account account = new Account(bnk.createAccNum(), 1, 0.00, 5000.00, use);
+		Account account2 = new Account(bnk.createAccNum(), 0, 0.00, 10000.00, use2);
 		//Add transaction
 		LocalDateTime dateTime = LocalDateTime.now();
 		DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
@@ -24,16 +24,18 @@ public class ATM {
 		
 		
 		
-		/*Print Account
+		///*Print Account
 		System.out.println("Account holder: " +use.fName +" " +use.lName
 				+"\nAccount Number: " +account.accountNumber
 				+"\nAccount Type: " + account.getValue()
-				+"\nBalance: " +account.balance +"\n");
+				+"\nChecking Balance: " +account.getCheckingBalance() 
+				+"\nSaving Balance: " +account.getSavingBalance()+"\n");
 		System.out.println("***********");
 		System.out.println("Account holder: " +use2.fName +" " +use2.lName
 				+"\nAccount Number: " +account2.accountNumber
 				+"\nAccount Type: " + account2.getValue()
-				+"\nBalance: " +account2.balance +"\n");*/
+				+"\nChecking Balance: " +account2.getCheckingBalance() 
+				+"\nSaving Balance: " +account2.getSavingBalance()+"\n");//*/
 		
 		
 		/*Printing User
