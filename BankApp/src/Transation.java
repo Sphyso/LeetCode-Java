@@ -5,29 +5,18 @@ import java.util.Set;
 
 public class Transation {
 	
-    ArrayList<String> transactionId;
-    String[] transactionType;  // e.g., Deposit, Withdrawal
-    int index;
+    String transactionId;
     private Account account;
     String date;
     User accUser;
     
-    public Transation(String transId, int index, Account account, String dateTime, User accUser) {
-    	transactionId.add(transId);
-    	transactionType = new String[] {"Deposit", "Withdrawal"};
-    	this.index = index;
+    public Transation(String transId, Account account, String dateTime, User accUser) {
+    	transactionId = transId;
     	this.account = account;
     	date = dateTime;  
     	this.accUser = accUser;
     }
     
-    public String getTransaction() {
-    	return transactionType[index];
-    }
-    
-    public void setTransaction(String value) {
-    	transactionType[index] = value;
-    }
     
     public void deposit(double amount, String accType) {
         if (accType == "Checking") {
@@ -64,7 +53,7 @@ public class Transation {
             }
 		} 
     	
-    	else if (accType == "Saving") {
+    	else if (accType == "Savings") {
 			if (amount > 0 && amount <= account.getSavingBalance()) {
                 account.updateSavingBalance(-amount);
                 System.out.println("Withdrew: $" + amount);

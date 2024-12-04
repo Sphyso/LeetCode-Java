@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class User {
 	
 	String fName;
-	String lName;
+    String lName;
     String phoneNumber;
     String uid;
     

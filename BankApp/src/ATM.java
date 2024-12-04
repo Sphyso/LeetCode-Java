@@ -19,7 +19,14 @@ public class ATM {
 		DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		String formattedDate = dateTime.format(formatDate);
 		
-		//Transation trans1 = new Transation(bnk.createTransactionID(), 0, )
+		Transation trans1 = new Transation(bnk.createTransactionID(), account, formattedDate, use);
+		Transation trans2 = new Transation(bnk.createTransactionID(), account2, formattedDate, use2);
+		
+		
+		//Transactions
+		trans1.deposit(2500.00, "Savings");
+		trans2.withdraw(5000.00, "Savings");
+		trans2.deposit(5000.00, "Checking");
 		
 		
 		
