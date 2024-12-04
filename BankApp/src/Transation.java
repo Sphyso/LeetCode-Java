@@ -29,22 +29,53 @@ public class Transation {
     	transactionType[index] = value;
     }
     
-    public void deposit(double amount) {
-        if (amount > 0) {
-            account.updateBalance(amount);
-            System.out.println("Deposited: $" + amount);
-        } else {
-            System.out.println("Deposit amount must be positive.");
-        }
+    public void deposit(double amount, String accType) {
+        if (accType == "Checking") {
+        	if (amount > 0) {
+                account.updateCheckingBalance(amount);
+                System.out.println("Deposited: $" + amount);
+            } 
+        	else {
+                System.out.println("Deposit amount must be positive.");
+            }
+		} 
+        
+        else if (accType == "Savings") {
+        	if (amount > 0) {
+                account.updateSavingBalance(amount);
+                System.out.println("Deposited: $" + amount);
+            } 
+        	else {
+                System.out.println("Deposit amount must be positive.");
+            }
+		}
+    	
+    	
     }
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= account.getBalance()) {
-            account.updateBalance(-amount);
-            System.out.println("Withdrew: $" + amount);
-        } else {
-            System.out.println("Insufficient balance or invalid amount.");
-        }
+    public void withdraw(double amount, String accType) {
+    	if (accType == "Checking") {
+            if (amount > 0 && amount <= account.getCheckingBalance()) {
+                account.updateCheckingBalance(-amount);
+                System.out.println("Withdrew: $" + amount);
+            } 
+            else {
+                System.out.println("Insufficient balance or invalid amount.");
+            }
+		} 
+    	
+    	else if (accType == "Saving") {
+			if (amount > 0 && amount <= account.getSavingBalance()) {
+                account.updateSavingBalance(-amount);
+                System.out.println("Withdrew: $" + amount);
+            } 
+			else {
+                System.out.println("Insufficient balance or invalid amount.");
+            }
+			
+		}
+    	
+
     }
 
 }
